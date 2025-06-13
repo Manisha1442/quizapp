@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  
+
+  <main class="app-main">
+    <!-- Login Screen -->
+    <div id="loginScreen" class="screen active">
+      <h2>Login</h2>
+      <input type="text" id="usernameInput" placeholder="Enter username" />
+      <button id="startBtn">Start Quiz</button>
+    </div>
+
+    <!-- Config Screen -->
+    <div id="configScreen" class="screen">
+      <h2>Welcome, <span id="displayUsername"></span></h2>
+      <button id="logoutBtn">Logout</button>
+      <p>Select Category:</p>
+      <select id="categorySelect">
+        <option value="" disabled selected>Select category</option>
+      </select>
+      <p>Select Number of Questions:</p>
+      <select id="questionCountSelect">
+        <option value="" disabled selected>Select number</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+        <option value="30">30</option>
+        <option value="50">50</option>
+      </select>
+      <br />
+      <button id="beginQuizBtn">Begin Quiz</button>
+    </div>
+
+    <!-- Quiz Screen -->
+    <div id="quizScreen" class="screen">
+      <h2>Quiz</h2>
+      <div>Time Left: <span id="timeLeft"></span> seconds</div>
+      <div id="progressBarContainer">
+        <div id="progressBar"></div>
+      </div>
+      <div id="questionText"></div>
+      <div id="optionsContainer"></div>
+      <button id="submitBtn" style="display:none;">Submit Quiz</button>
+    </div>
+
+    <!-- Result Screen -->
+    <div id="resultScreen" class="screen">
+      <h2>Results</h2>
+      <div id="scoreDisplay"></div>
+      <button id="reviewQuizBtn">Review Quiz</button>
+      <button id="restartBtn">Restart</button>
+      <button id="logoutBtn2">Logout</button>
+      <button id="toggleHighScoresBtn">Show High Scores</button>
+      <ul id="highScoresList" style="display: none;"></ul>
+      <div id="answerReview"></div>
+    </div>
+  </main>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
